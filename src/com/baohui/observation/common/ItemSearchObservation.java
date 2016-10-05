@@ -13,7 +13,6 @@ import java.util.List;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
-import com.baohui.observation.enhance.BookMetadataCaptureException;
 import com.baohui.observation.price.RestrictPriceCheck;
 
 /**
@@ -126,7 +125,7 @@ public abstract class ItemSearchObservation {
 		try {
 			url = new URL(pageUrl);
 		} catch (MalformedURLException e2) {
-			throw new BookMetadataCaptureException("数据抓取过程中发生错误" + e2.getMessage(), e2);
+			throw new RuntimeException("数据抓取过程中发生错误" + e2.getMessage(), e2);
 		}
 		int errCount = 0;
 		Exception ex = null;
@@ -144,7 +143,7 @@ public abstract class ItemSearchObservation {
 				}
 			}
 		}
-		throw new BookMetadataCaptureException("数据抓取过程中发生错误" + ex.getMessage(), ex);
+		throw new RuntimeException("数据抓取过程中发生错误" + ex.getMessage(), ex);
 	}
 	
 	/**

@@ -31,6 +31,7 @@ public class JDItemSearchObservation extends ItemSearchObservation{
 	@Override
 	protected List<ItemData> parse(Document doc) {
 		List<ItemData> list = new ArrayList<ItemData>();
+		String buf = doc.html();
 		// ÌÞ³ýÍÆ¼ö½á¹û
 		String item[] = buf.split("<li data-sku");
 		for (int i = 1; i < item.length; i++) {
