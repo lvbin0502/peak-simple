@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Main-Class: com.baohui.observation.main.Main
+Class-Path: lib/poi-3.8.jar lib/poi-ooxml-3.8.jar lib/poi-ooxml-schemas-3.7.jar
